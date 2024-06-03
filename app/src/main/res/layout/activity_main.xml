@@ -14,7 +14,7 @@
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bem-vindo ao Meu Quiz"
+        android:text="Bem-vindo ao Meu Quiz!"
         android:textSize="24sp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="32dp"/>
