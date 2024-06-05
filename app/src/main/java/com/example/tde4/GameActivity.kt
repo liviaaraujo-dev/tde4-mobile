@@ -47,6 +47,7 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         setContentView(R.layout.activity_game)
 
         questionTextView = findViewById(R.id.question_text)
@@ -96,11 +97,9 @@ class GameActivity : AppCompatActivity() {
                         else -> feedbackMessage = "Uau, você é espetacular. Me curvo a sua sabedoria!"
                     }
 
-//                    feedbackTextView.text = "Respostas corretas: $totalQuestions. \nAcertou: $percentage%. \n$feedbackMessage"
-
                     val builder = AlertDialog.Builder(this)
                     builder.setTitle("Resultado do Quiz")
-                    builder.setMessage( "Respostas corretas: $totalQuestions. \nAcertou: $percentage%. \n$feedbackMessage")
+                    builder.setMessage( "Respostas corretas: $score. \nAcertou: $percentage%. \n$feedbackMessage")
                     builder.setPositiveButton("OK", { dialog, _ ->
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
@@ -116,9 +115,7 @@ class GameActivity : AppCompatActivity() {
     private fun updateQuestion() {
         val question = questions[currentQuestionIndex]
         questionTextView.text = question.text
-
         answerRadioGroup.clearCheck()
-
         answerRadioGroup.removeAllViews()
 
         for ((index, answer) in question.answers.withIndex()) {

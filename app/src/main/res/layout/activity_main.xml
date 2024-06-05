@@ -26,6 +26,4 @@
         android:text="Iniciar Jogo"
         android:layout_below="@id/titleTextView"
         android:layout_centerHorizontal="true" />
-
-
 </LinearLayout>
